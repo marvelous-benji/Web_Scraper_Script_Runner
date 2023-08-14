@@ -20,7 +20,7 @@ def user_lookup_callback(_jwt_header, jwt_payload):
     identity = jwt_payload["sub"]
     return User.query.filter_by(id=identity).one_or_none()
 
-
+'''
 @auth.route("/signup", methods=["POST"])
 def signup():
 
@@ -45,7 +45,7 @@ def signup():
     db.session.add(user)
     db.session.commit()
     return jsonify({"status": "success", "msg": "Signup was successful"}), 201
-
+'''
 
 @auth.route("/login", methods=["POST"])
 def signin():
